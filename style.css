@@ -1,0 +1,272 @@
+a {
+  text-decoration: none;
+  color: black; }
+
+body {
+  background-color: red; }
+
+#main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+  #main .background {
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #main .background .name-color {
+      display: inline-block;
+      color: white;
+      background-color: black;
+      text-transform: uppercase;
+      font-size: 35px;
+      font-family: "Montserrat", sans-serif;
+      padding: 6px 10px; }
+  #main .container {
+    max-width: 1200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin: 0 auto;
+    position: relative; }
+    #main .container .yes-or-no {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+      margin-bottom: 30px;
+      -webkit-transition: 300ms;
+      -o-transition: 300ms;
+      transition: 300ms; }
+      #main .container .yes-or-no .button {
+        color: black;
+        padding: 4px 7px;
+        background-color: white;
+        border: 1px solid black;
+        font-size: 23px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        border-radius: 7px; }
+        #main .container .yes-or-no .button:hover {
+          color: white;
+          background-color: black; }
+      #main .container .yes-or-no.clicked {
+        margin-bottom: 270px; }
+    #main .container .panel {
+      position: absolute;
+      width: 100%;
+      -webkit-transition: 300ms;
+      -o-transition: 300ms;
+      transition: 300ms;
+      overflow: hidden;
+      left: 50%;
+      -webkit-transform: translate(-50%, -100%);
+      -ms-transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
+      max-height: 250px;
+      top: 100%;
+      border: 1px solid black;
+      border-bottom: 0px;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 100px;
+      background-color: white; }
+      #main .container .panel .overflowhidden {
+        max-height: 250px;
+        overflow-y: scroll; }
+        #main .container .panel .overflowhidden .choice {
+          margin-top: 30px;
+          text-align: center;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          font-size: 20px; }
+        #main .container .panel .overflowhidden .colors {
+          margin-top: 20px;
+          margin-bottom: 30px; }
+          #main .container .panel .overflowhidden .colors .list-color {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; }
+            #main .container .panel .overflowhidden .colors .list-color li {
+              margin: 0 40px;
+              margin-top: 10px;
+              cursor: pointer; }
+              #main .container .panel .overflowhidden .colors .list-color li .color-block {
+                background-color: red;
+                height: 60px;
+                width: 60px;
+                border-radius: 15px;
+                border: 1px solid black; }
+              #main .container .panel .overflowhidden .colors .list-color li .color-name-inf {
+                margin-top: 5px;
+                text-align: center;
+                font-family: "Josefin Sans", sans-serif; }
+            #main .container .panel .overflowhidden .colors .list-color #skip {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              width: 60px; }
+              #main .container .panel .overflowhidden .colors .list-color #skip .icon-skip {
+                width: 40px;
+                height: 40px;
+                background-color: #3fa4df;
+                border-radius: 50%;
+                -webkit-transition: 300ms;
+                -o-transition: 300ms;
+                transition: 300ms;
+                position: relative; }
+                #main .container .panel .overflowhidden .colors .list-color #skip .icon-skip span {
+                  display: block;
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  width: 15px;
+                  height: 3px;
+                  background-color: white;
+                  -webkit-transform-origin: right;
+                  -ms-transform-origin: right;
+                  transform-origin: right;
+                  -webkit-transform: translate(-50%, -50%) rotate(40deg);
+                  -ms-transform: translate(-50%, -50%) rotate(40deg);
+                  transform: translate(-50%, -50%) rotate(40deg);
+                  border-radius: 3px; }
+                #main .container .panel .overflowhidden .colors .list-color #skip .icon-skip span:nth-child(2n) {
+                  -webkit-transform: translate(-50%, -50%) rotate(-40deg);
+                  -ms-transform: translate(-50%, -50%) rotate(-40deg);
+                  transform: translate(-50%, -50%) rotate(-40deg); }
+                #main .container .panel .overflowhidden .colors .list-color #skip .icon-skip span:first-child {
+                  width: 25px;
+                  left: 50%;
+                  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                  -ms-transform: translate(-50%, -50%) rotate(0deg);
+                  transform: translate(-50%, -50%) rotate(0deg); }
+              #main .container .panel .overflowhidden .colors .list-color #skip h3 {
+                margin-top: 10px;
+                font-family: "Josefin Sans", sans-serif;
+                white-space: nowrap; }
+              #main .container .panel .overflowhidden .colors .list-color #skip:hover .icon-skip {
+                -webkit-transform: rotate(-270deg);
+                -ms-transform: rotate(-270deg);
+                transform: rotate(-270deg); }
+    #main .container .closed {
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
+
+#add-new-color-block {
+  position: absolute;
+  visibility: visible;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.7);
+  opacity: 1;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms; }
+  #add-new-color-block .message {
+    top: 50%;
+    left: 50%;
+    padding-top: 40px;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 300px;
+    background-color: white;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    #add-new-color-block .message .current-color {
+      position: absolute;
+      top: 0;
+      background-color: black;
+      height: 40px;
+      width: 100%; }
+    #add-new-color-block .message .rgb {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      #add-new-color-block .message .rgb .row {
+        margin-top: 6px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+        #add-new-color-block .message .rgb .row span {
+          margin-right: 20px;
+          font-family: "Montserrat", sans-serif; }
+        #add-new-color-block .message .rgb .row input {
+          display: inline-block;
+          width: 100px; }
+        #add-new-color-block .message .rgb .row:first-child {
+          margin-top: 0; }
+    #add-new-color-block .message .add-new-color-in-list {
+      display: inline-block;
+      padding: 6px 10px;
+      background-color: #3fa4df;
+      color: white;
+      font-size: 17px;
+      font-family: "Roboto", sans-serif; }
+
+#add-new-color-block.closed {
+  opacity: 0.0;
+  visibility: hidden; }

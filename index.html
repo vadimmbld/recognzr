@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="webfont.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Permanent+Marker&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <section id="main">
+        <div class="background">
+            <span class="name-color">Red</span>
+        </div>
+        <div class="container">
+            <div class="yes-or-no">
+                <a href="#" class="button button-yes">
+                    YES
+                </a>
+                <a href="#" class="button button-no">
+                    NO
+                </a>
+            </div>
+            <div class="panel closed">
+                <div class="overflowhidden">
+                    <p class="choice">СHOOSE THE RIGHT COLOR</p>
+                    <div class="colors">
+                        <ul class="list-color">
+                            <li id="color0" class="color-inf">
+                                <div data-color="hsl(0,0%,0%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Black</h3>
+                            </li>
+                            <li id="color1" class="color-inf">
+                                <div data-color="hsl(0, 0%, 40%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Gray</h3>
+                            </li>
+                            <li id="color2" class="color-inf">
+                                <div data-color="hsl(0,100%,50%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Red</h3>
+                            </li>
+                            <li id="color3" class="color-inf">
+                                <div data-color="hsl(19, 100%, 42%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Orange</h3>
+                            </li>
+                            <li id="color4" class="color-inf">
+                                <div data-color="hsl(60, 100%, 50%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Yellow</h3>
+                            </li>
+                            <li id="color5" class="color-inf">
+                                <div data-color="hsl(120, 100%, 50%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Green</h3>
+                            </li>
+                            <li id="color6" class="color-inf">
+                                <div data-color="hsl(240,100%,50%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Blue</h3>
+                            </li>
+                            <li id="color7" class="color-inf">
+                                <div data-color="hsl(269, 100%, 42%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Purple</h3>
+                            </li>
+                            <li id="color8" class="color-inf">
+                                <div data-color="hsl(323, 100%, 42%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Pink</h3>
+                            </li>
+                            <li id="color9" class="color-inf">
+                                <div data-color="hsl(0, 0%, 100%)" class="color-block"></div>
+                                <h3 class="color-name-inf">White</h3>
+                            </li>
+                            <li id="color10" class="color-inf">
+                                <div data-color="hsl(17, 96%, 20%)" class="color-block"></div>
+                                <h3 class="color-name-inf">Brown</h3>
+                            </li>
+                            <li id="skip">
+                                <div class="icon-skip">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h3 class="skiip">Skip</h3>
+                            </li> 
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </div>  
+    </section>
+    <div id="add-new-color-block" class="closed">
+        <div class="message">
+            <div class="current-color" data-color="hsl(0,0,0)"></div>
+            <div class="rgb">
+                <div class="row">
+                    <span>Name color: </span><input type="text" name="name-new-color" id="name-new-color">
+                </div>
+                <div class="row">
+                    <span>H</span><input type="number" min="0" max="360" name="h-input" id="h-input">
+                </div>
+                <div class="row">
+                    <span>S</span><input type="number" min="0" max="100" name="s-input" id="s-input">
+                </div>
+                <div class="row">
+                    <span>L</span><input type="number" min="0" max="100" name="l-input" id="l-input">
+                </div>
+            </div>
+            <a href="#" class="add-new-color-in-list">Add Color</a>
+        </div>
+        
+    </div>
+    
+    <script src="jquery.js"></script>
+    <script src="neuron.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

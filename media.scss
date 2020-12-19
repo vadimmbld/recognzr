@@ -1,0 +1,42 @@
+@media screen and (max-height:640px){
+    #main{
+        .container{
+            .yes-or-no.clicked{
+                margin-bottom: 180px;
+            }
+            .panel{
+                max-height: 150px;
+                .overflowhidden{
+                    max-height: 150px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:570px){
+    #main{
+        .container{
+            .panel{
+                .overflowhidden{
+                    .colors{
+                        .list-color{
+                            li{
+                                margin: 0 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:400px){
+    #main{
+        .container{
+            .panel{
+                border-top-left-radius: 50px;
+                border-top-right-radius: 50px;
+            }
+        }
+    }
+}
