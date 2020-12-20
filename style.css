@@ -3,7 +3,7 @@ a {
   color: black; }
 
 body {
-  background-color: red; }
+  background-color: red;transition:200ms; }
 
 #main {
   width: 100%;
