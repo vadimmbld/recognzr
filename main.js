@@ -5,7 +5,12 @@ function callbackNeuronTeach(){
         $('.button-no').parent().toggleClass('clicked');
     }
     if($('.button').hasClass('clicked')){
-        $('.button').toggleClass('clicked');
+        if($('.button-no').hasClass('clicked')){
+            $('.button-no').toggleClass('clicked');
+        }
+        if($('.button-yes').hasClass('clicked')){
+            $('.button-yes').toggleClass('clicked');
+        }
         
         h=randomRange(0,360);
         s=randomRange(0,100);
@@ -16,6 +21,7 @@ function callbackNeuronTeach(){
     if($('.color-inf').hasClass('clicked')){
         $('.color-inf').toggleClass('clicked');
     }
+    $('.train-message').addClass('closed-message');
 }
 function maxPersent(x){
     let maxpr = x[0];
@@ -55,18 +61,68 @@ $(document).ready(function(){
     valColor=neuron([Math.sin((h*Math.PI)/360),Math.cos((h*Math.PI)/360),s/100,l/100]);
     changeColor();
     init_colors();
+    $('.standart .my-colors').on('click',(event)=>{
+        event.preventDefault();
+        if($('.panel').hasClass('closed')){
+            myColorsW();
+            Er.push([iteration,0.07]);
+            iteration++; 
+            Ts = [];
+            h=randomRange(0,360);
+            s=randomRange(0,100);
+            l=randomRange(0,100);
+            valColor=neuron([Math.sin((h*Math.PI)/360),Math.cos((h*Math.PI)/360),s/100,l/100]);
+            changeColor();
+        }
+    })
+    $('.train-button').on('click',(event)=>{
+        event.preventDefault();
+        if($('.panel').hasClass('closed')){
+            $('.train-message').removeClass('closed-message');
+            if(Ts.length>=25){
+                $('.train-message .text-message').html('Training...');
+                $('.train-message .cycle').removeClass('hidden');
+                $('.train-message  .button-message').addClass('hidden');
+                setTimeout(()=>{
+                    if(Er[Er.length-1][1]>0.15){
+                        teach(1000);
+                    }else{
+                        teach(1000,0.0001);
+                    }
+                    
+                },400);
+            }else{
+                $('.train-message .text-message').html(`Error: Small training sample.\n It remains to add: ${25-Ts.length}`);
+                $('.train-message .cycle').addClass('hidden');
+                $('.train-message  .button-message').removeClass('hidden');
+            }
+        }
+        
+    })
+    $('.train-message .button-message').on('click',function(){
+        $('.train-message').addClass('closed-message');
+    });
     $('.button-yes').on('click',(event)=>{
         event.preventDefault();
         if(!$('.button-yes').hasClass('clicked')){
             $('.button').toggleClass('clicked');
             Ts.push([Math.sin((h*Math.PI)/360),Math.cos((h*Math.PI)/360),s/100,l/100,trueResArray(maxPersent(valColor),11)]);
-            teach(Math.round(Ts.length/2),0.01);
+            if (Er.length>0){
+                if(Er[Er.length-1][1]>0.15){
+                    teach(Math.round(Ts.length/2));
+                }else{
+                    teach(Math.round(Ts.length/2),0.0001);
+                }
+            }else{
+                teach(Math.round(Ts.length/2));
+            }
+            
         }
     });
     $('.button-no').on('click',(event)=>{
         event.preventDefault();
-        if(!$('.button').hasClass('clicked')){
-            $('.button').toggleClass('clicked');
+        if(!$('.button-no').hasClass('clicked')){
+            $('.button-no').toggleClass('clicked');
             $('.button-no').parent().toggleClass('clicked');
             $('.panel').toggleClass('closed');
         }
@@ -125,7 +181,15 @@ $(document).ready(function(){
             let reg = /\d{1,}/g;
             let res = idElem.match(reg);
             Ts.push([Math.sin((h*Math.PI)/360),Math.cos((h*Math.PI)/360),s/100,l/100,trueResArray(res,11)]);
-            teach(Math.round(Ts.length/2),0.01);
+            if (Er.length>0){
+                if(Er[Er.length-1][1]>0.15){
+                    teach(Math.round(Ts.length/2));
+                }else{
+                    teach(Math.round(Ts.length/2),0.0001);
+                }
+            }else{
+                teach(Math.round(Ts.length/2));
+            }
         }
        
     })
